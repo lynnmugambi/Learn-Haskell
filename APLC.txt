@@ -1,0 +1,59 @@
+John, Fred, Harry are men Mary Julie Susan Anne are women
+John has blonde hair fred and harry have dark hair
+Julie and susan are blonde mary and anne are brunette
+Rich is each person who owns gold, fred and Julie own gold
+Male like only female and vice versa
+John and Harry like rich people
+John likes blonde and fred likes brunette
+Mary and Julie like dark hair persons
+Julile likes rich persons
+
+
+man(john).
+man(fred).
+man(harry).
+
+woman(mary).
+woman(julie).
+woman(susan).
+woman(anne).
+
+blonde(john).
+blonde(julie).
+blonde(susan).
+dark(fred).
+dark(harry).
+brunette(anne).
+brunette(mary).
+
+
+owns_gold(fred).
+owns_gold(julie).
+rich(X):-owns_gold(X).
+
+%OR
+
+rich1(fred).
+rich1(julie).
+
+like(john,X):- (rich(X);blonde(X)),woman(X).
+like(harry,X):- rich(X),woman(X).
+like(fred,X):- brunette(X),woman(X).
+like(mary,X):- dark(X),man(X).
+like(julie,X):-dark(X),rich(X),man(X).
+like(susan,X):-man(X).
+like(anne,X):-man(X).
+
+
+HIGHER ORDER FUNCTIONS
+COMPOSITE FACT
+details(author(sam),book(a_to_z)).
+details(author(john),book(let's_cook)).
+
+EXECUTE details(A,B). or details(author(X),B).
+
+Execute following query: couple who like each other
+like(A,B),like(B,A).
+
+
+
